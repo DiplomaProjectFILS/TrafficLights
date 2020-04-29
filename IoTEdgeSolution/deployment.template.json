@@ -11,8 +11,8 @@
             "loggingOptions": "",
             "registryCredentials": {
               "licentacontainerregistry": {
-                "username": "$CONTAINER_REGISTRY_USERNAME_licentacontainerregistry",
-                "password": "$CONTAINER_REGISTRY_PASSWORD_licentacontainerregistry",
+                "username": "#{acr.username}#",
+                "password": ""#{acr.password}#"",
                 "address": "licentacontainerregistry.azurecr.io"
               }
             }
