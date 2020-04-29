@@ -12,7 +12,7 @@
             "registryCredentials": {
               "licentacontainerregistry": {
                 "username": "#{acr.username}#",
-                "password": ""#{acr.password}#"",
+                "password": "#{acr.password}#",
                 "address": "licentacontainerregistry.azurecr.io"
               }
             }
