@@ -11,8 +11,8 @@
             "loggingOptions": "",
             "registryCredentials": {
               "licentacontainerregistry": {
-                "username": "$CONTAINER_REGISTRY_USERNAME_licentacontainerregistry",
-                "password": "$CONTAINER_REGISTRY_PASSWORD_licentacontainerregistry",
+                "username": "#{acr.username}#",
+                "password": "#{acr.password}#",
                 "address": "licentacontainerregistry.azurecr.io"
               }
             }
@@ -79,16 +79,6 @@
                 }
               }
             }
-          },
-          "SimulatedTemperatureSensor": {
-            "version": "1.0",
-            "type": "docker",
-            "status": "running",
-            "restartPolicy": "always",
-            "settings": {
-              "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0",
-              "createOptions": {}
-            }
           }
         }
       }
@@ -97,8 +87,7 @@
       "properties.desired": {
         "schemaVersion": "1.0",
         "routes": {
-          "SampleModuleToIoTHub": "FROM /messages/modules/SampleModule/outputs/* INTO $upstream",
-          "sensorToSampleModule": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/SampleModule/inputs/input1\")"
+          "SampleModuleToIoTHub": "FROM /messages/modules/SampleModule/outputs/* INTO $upstream"
         },
         "storeAndForwardConfiguration": {
           "timeToLiveSecs": 7200
