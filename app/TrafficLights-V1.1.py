@@ -15,17 +15,21 @@ green = [4, 18, 22, 25]
 
 all = south + west + north + east
 
+
 def initialize():
     for led in all:
         GPIO.setup(led, GPIO.OUT)
+
 
 def reset_all():
     for led in all:
         GPIO.output(led, GPIO.LOW)
 
+
 def all_yellow():
     for led in yellow:
         GPIO.output(led, GPIO.HIGH)
+
 
 def all_red():
     for led in red:
@@ -35,6 +39,7 @@ def all_red():
     for led in green:
         GPIO.output(led, GPIO.LOW)
 
+
 def north_south_red():
     GPIO.output(north[0], GPIO.HIGH)
     GPIO.output(south[0], GPIO.HIGH)
@@ -42,6 +47,7 @@ def north_south_red():
     GPIO.output(south[1], GPIO.LOW)
     GPIO.output(north[2], GPIO.LOW)
     GPIO.output(south[2], GPIO.LOW)
+
 
 def north_south_yellow():
     GPIO.output(north[0], GPIO.LOW)
@@ -51,6 +57,7 @@ def north_south_yellow():
     GPIO.output(north[2], GPIO.LOW)
     GPIO.output(south[2], GPIO.LOW)
 
+
 def north_south_green():
     GPIO.output(north[0], GPIO.LOW)
     GPIO.output(south[0], GPIO.LOW)
@@ -58,6 +65,7 @@ def north_south_green():
     GPIO.output(south[1], GPIO.LOW)
     GPIO.output(north[2], GPIO.HIGH)
     GPIO.output(south[2], GPIO.HIGH)
+
 
 def west_est_red():
     GPIO.output(west[0], GPIO.HIGH)
@@ -76,6 +84,7 @@ def west_est_yellow():
     GPIO.output(west[2], GPIO.LOW)
     GPIO.output(east[2], GPIO.LOW)
 
+
 def west_est_green():
     GPIO.output(west[0], GPIO.LOW)
     GPIO.output(east[0], GPIO.LOW)
@@ -84,10 +93,12 @@ def west_est_green():
     GPIO.output(west[2], GPIO.HIGH)
     GPIO.output(east[2], GPIO.HIGH)
 
+
 def counters():
     GPIO.setwarnings(False)
     GPIO.setup(20, GPIO.IN)
     GPIO.setup(21, GPIO.IN)
+
 
 def NS_way():
     north_south_green()
@@ -101,6 +112,7 @@ def NS_way():
     time.sleep(2)
     west_est_red()
 
+
 def WE_way():
     west_est_green()
     time.sleep(10)
@@ -112,6 +124,7 @@ def WE_way():
     north_south_yellow()
     time.sleep(2)
     north_south_red()
+
 
 initialize()
 reset_all()
