@@ -1,1 +1,1 @@
-# TrafficLights application on Raspberry PI 4 - Sesiune Comunicari
+# TrafficLights application on Raspberry PI 4 - Presentation
