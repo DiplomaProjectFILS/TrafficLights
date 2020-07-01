@@ -131,11 +131,6 @@ reset_all()
 counters()
 
 while True:
-    if GPIO.input(20) == 0:
-        print('Car detected')
         NS_way()
-    elif GPIO.input(21) == 0:
-        print('Car detected')
         WE_way()
-    else:
-        all_red()
+
