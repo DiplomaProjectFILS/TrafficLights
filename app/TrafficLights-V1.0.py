@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 import RPi.GPIO as GPIO
 import time
 
@@ -131,5 +132,5 @@ reset_all()
 counters()
 
 while True:
-	NS_way()
-	WE_way()
+    NS_way()
+    WE_way()
