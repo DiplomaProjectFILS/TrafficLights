@@ -131,6 +131,5 @@ reset_all()
 counters()
 
 while True:
-        NS_way()
-        WE_way()
-
+	NS_way()
+	WE_way()
